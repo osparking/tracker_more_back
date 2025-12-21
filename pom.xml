@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bumsoap</groupId>
-	<artifactId>tracker_more</artifactId>
+	<artifactId>tracker_more_back</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tracker_more</name>
 	<description>Demo project for Spring Boot</description>
