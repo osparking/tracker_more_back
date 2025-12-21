@@ -22,4 +22,9 @@ public class BsOrder {
 
     @Column(unique = true)
     private String waybillNo;
+
+    public BsOrder(String waybillNo, OrderStatus orderStatus) {
+        this.waybillNo = waybillNo;
+        this.orderStatus = orderStatus;
+    }
 }
