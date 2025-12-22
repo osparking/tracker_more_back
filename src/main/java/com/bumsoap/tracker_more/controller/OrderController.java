@@ -3,6 +3,7 @@ package com.bumsoap.tracker_more.controller;
 import com.bumsoap.tracker_more.dto.ApiResponse;
 import com.bumsoap.tracker_more.model.BsOrder;
 import com.bumsoap.tracker_more.request.AddOrderRequest;
+import com.bumsoap.tracker_more.request.TrackingRequest;
 import com.bumsoap.tracker_more.service.OrderService;
 import com.bumsoap.tracker_more.util.OrderStatus;
 import lombok.RequiredArgsConstructor;
@@ -42,9 +43,9 @@ public class OrderController {
 
     @PostMapping("/track")
     public ResponseEntity<ApiResponse> trackDelivery(
-            @RequestBody Object deliveryTracking) {
+            @RequestBody TrackingRequest deliveryTracking) {
         try {
-            System.out.println("배송 추적: %s" + deliveryTracking);
+            System.out.println("배송 추적: " + deliveryTracking);
 
             return ResponseEntity.ok(new ApiResponse(
                     "배송 상태 변화 정보 도착", null));
