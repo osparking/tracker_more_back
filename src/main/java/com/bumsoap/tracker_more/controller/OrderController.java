@@ -39,4 +39,18 @@ public class OrderController {
                     .body(new ApiResponse(e.getMessage(), null));
         }
     }
+
+    @PostMapping("/track")
+    public ResponseEntity<ApiResponse> trackDelivery(
+            @RequestBody Object deliveryTracking) {
+        try {
+            System.out.println("배송 추적: %s" + deliveryTracking);
+
+            return ResponseEntity.ok(new ApiResponse(
+                    "배송 상태 변화 정보 도착", null));
+        } catch (Exception e) {
+            return ResponseEntity.status(INTERNAL_SERVER_ERROR)
+                    .body(new ApiResponse(e.getMessage(), null));
+        }
+    }
 }
