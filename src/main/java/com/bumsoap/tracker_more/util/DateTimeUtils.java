@@ -1,10 +1,12 @@
 package com.bumsoap.tracker_more.util;
 
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
+import java.time.*;
 
 public class DateTimeUtils {
     public static LocalDateTime fromString(String dateString) {
-        return OffsetDateTime.parse(dateString).toLocalDateTime();
+        Instant instant = Instant.parse(dateString);
+        ZoneId systemDefaultZone = ZoneId.systemDefault();
+        ZonedDateTime zonedDateTime = instant.atZone(systemDefaultZone);
+        return zonedDateTime.toLocalDateTime();
     }
 }
